@@ -33,10 +33,35 @@ public class MainActivity extends AppCompatActivity {
                 TextView computer = binding.computerWeapon;
                 TextView result = binding.resultText;
 
-                score.setText("Player: " + PlayerScore + ", Computer: " + ComputerScore);
-                player.setText("");
-                computer.setText("");
-                result.setText("");
+                String Results = "";
+
+                PlayerWeapon = Weapon.ROCK;
+                int num = new Random().nextInt(3);
+                if(num == 0) {
+                    ComputerWeapon = Weapon.ROCK;
+                } else if (num == 1) {
+                    ComputerWeapon = Weapon.PAPER;
+                } else {
+                    ComputerWeapon = Weapon.SCISSORS;
+                }
+
+                if (PlayerWeapon == ComputerWeapon) {  //Draw
+                    Results = "Draw: " + getResources().getString(R.string.draw);
+                } else if (ComputerWeapon == Weapon.SCISSORS) { //Win
+                    PlayerScore++;
+                    Results = "Player Wins: " + getResources().getString(R.string.rockWin);
+                } else { //Lose
+                    ComputerScore++;
+                    Results = "Computer Wins: " + getResources().getString(R.string.paperWin);
+                }
+
+                String scoreString = "Player: " + PlayerScore + ", Computer: " + ComputerScore;
+                String PlayChoice = PlayerChoice + " " + PlayerWeapon.toString();
+                String CompChoice = ComputerChoice + " " + ComputerWeapon.toString();
+                score.setText(scoreString);
+                player.setText(PlayChoice);
+                computer.setText(CompChoice);
+                result.setText(Results);
             }
         });
 
@@ -48,10 +73,35 @@ public class MainActivity extends AppCompatActivity {
                 TextView computer = binding.computerWeapon;
                 TextView result = binding.resultText;
 
-                score.setText("Player: " + PlayerScore + ", Computer: " + ComputerScore);
-                player.setText("");
-                computer.setText("");
-                result.setText("");
+                String Results = "";
+
+                PlayerWeapon = Weapon.PAPER;
+                int num = new Random().nextInt(3);
+                if(num == 0){
+                    ComputerWeapon = Weapon.ROCK;
+                } else if (num == 1) {
+                    ComputerWeapon = Weapon.PAPER;
+                } else {
+                    ComputerWeapon = Weapon.SCISSORS;
+                }
+
+                if (PlayerWeapon == ComputerWeapon) {  //Draw
+                    Results = "Draw: " + getResources().getString(R.string.draw);
+                } else if (ComputerWeapon == Weapon.ROCK) { //Win
+                    PlayerScore++;
+                    Results = "Player Wins: " + getResources().getString(R.string.paperWin);
+                } else { //Lose
+                    ComputerScore++;
+                    Results = "Computer Wins: " + getResources().getString(R.string.scissorsWin);
+                }
+
+                String scoreString = "Player: " + PlayerScore + ", Computer: " + ComputerScore;
+                String PlayChoice = PlayerChoice + " " + PlayerWeapon.toString();
+                String CompChoice = ComputerChoice + " " + ComputerWeapon.toString();
+                score.setText(scoreString);
+                player.setText(PlayChoice);
+                computer.setText(CompChoice);
+                result.setText(Results);
             }
         });
 
@@ -63,10 +113,35 @@ public class MainActivity extends AppCompatActivity {
                 TextView computer = binding.computerWeapon;
                 TextView result = binding.resultText;
 
-                score.setText("Player: " + PlayerScore + ", Computer: " + ComputerScore);
-                player.setText("");
-                computer.setText("");
-                result.setText("");
+                String Results = "";
+
+                PlayerWeapon = Weapon.SCISSORS;
+                int num = new Random().nextInt(3);
+                if(num == 0){
+                    ComputerWeapon = Weapon.ROCK;
+                } else if (num == 1) {
+                    ComputerWeapon = Weapon.PAPER;
+                } else {
+                    ComputerWeapon = Weapon.SCISSORS;
+                }
+
+                if (PlayerWeapon == ComputerWeapon) {  //Draw
+                    Results = "Draw: " + getResources().getString(R.string.draw);
+                } else if (ComputerWeapon == Weapon.PAPER) { //Win
+                    PlayerScore++;
+                    Results = "Player Wins: " + getResources().getString(R.string.scissorsWin);
+                } else { //Lose
+                    ComputerScore++;
+                    Results = "Computer Wins: " + getResources().getString(R.string.rockWin);
+                }
+
+                String scoreString = "Player: " + PlayerScore + ", Computer: " + ComputerScore;
+                String PlayChoice = PlayerChoice + " " + PlayerWeapon.toString();
+                String CompChoice = ComputerChoice + " " + ComputerWeapon.toString();
+                score.setText(scoreString);
+                player.setText(PlayChoice);
+                computer.setText(CompChoice);
+                result.setText(Results);
             }
         });
     }
